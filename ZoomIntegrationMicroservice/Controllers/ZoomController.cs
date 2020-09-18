@@ -148,5 +148,68 @@ namespace ZoomIntegrationMicroservice.Controllers
         }
 
         #endregion
+
+        #region CCAvenuePaymentGateway
+        [HttpPost]
+        public ActionResult Payment()
+        {
+
+            //var queryParameter = new CCACrypto();
+
+            //CCACrypto is the dll you get when you download the ASP.NET 3.5 integration kit from 
+            //ccavenue account.
+
+            // return View("CcAvenue", new CcAvenueViewModel(queryParameter.Encrypt
+            //(BuildCcAvenueRequestParameters(), _config["CCAvenue:CcAvenueWorkingKey"]),
+            //_config["CCAvenue:CcAvenueAccessCode"]),
+            // _config["CCAvenue:CcAvenueCheckoutUrl"]));
+            return Ok("hello");
+        }
+        [HttpPost]
+        [Route("payment-successful")]
+        public ActionResult PaymentSuccessful(string encResp)
+        {
+            /*Do not change the encResp.If you change it you will not get any response.
+            Decode the encResp*/
+            //var decryption = new CCACrypto();
+            //var decryptedParameters = decryption.Decrypt(encResp,
+            //_config["CCAvenue:CcAvenueWorkingKey"]);
+            return null;
+            /*split the decryptedParameters by & and then by = and save your values*/
+        }
+        [HttpPost]
+        [Route("payment-cancelled")]
+        public ActionResult PaymentCanceled(string encResp)
+        {
+            /*Do not change the encResp.If you change it you will not get any response.
+            Decode the encResp*/
+            //var decryption = new CCACrypto();
+            //var decryptedParameters = decryption.Decrypt(encResp,
+            //_config["CCAvenue:CcAvenueWorkingKey"]);
+            return null;
+            /*split the decryptedParameters by & and then by = and save your values*/
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("dict")]
+        public string BuildCcAvenueRequestParameters(string orderId, string amount)
+        {
+            var queryParameters = new Dictionary<string, string>
+                                {
+                                {"order_id", orderId},
+                                {"merchant_id", _config["CCAvenue:CcAvenueMerchantId"]},
+                                {"amount", amount},
+                                {"currency","INR" },
+                                {"tid",orderId },
+                                {"redirect_url","/payment-successful" },
+                                {"cancel_url","/payment-cancelled"},
+                                {"request_type","JSON" },
+                                {"response_type","JSON" },
+                                {"version","1.1" }
+}.Select(item => string.Format("{0}={1}", item.Key, item.Value));
+            return string.Join("&", queryParameters);
+        }
+
+        #endregion
     }
 }
