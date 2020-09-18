@@ -43,5 +43,12 @@ C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.pdb
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.genruntimeconfig.cache
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.csprojAssemblyReference.cache
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.csproj.CoreCompileInputs.cache
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.MvcApplicationPartsAssemblyInfo.cache

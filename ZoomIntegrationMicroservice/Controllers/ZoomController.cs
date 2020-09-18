@@ -10,11 +10,17 @@ using ZoomIntegrationMicroservice.Models;
 using System.Security.Cryptography;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Authorization;
+using ZoomIntegrationMicroservice.Helper;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace ZoomIntegrationMicroservice.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ZoomController : ControllerBase
     {
         static readonly char[] padding = { '=' };
@@ -30,6 +36,8 @@ namespace ZoomIntegrationMicroservice.Controllers
             _config = config;
             _access = access;
         }
+
+        #region Zoom Integrarion
         [HttpGet]
         [Route("get-user")]
         public async Task<object> GetZoomUser() {
@@ -104,5 +112,41 @@ namespace ZoomIntegrationMicroservice.Controllers
             var response = await _httpClient.CreateZoomMeeting(payload);
             return response;
         }
+        #endregion
+
+        #region JWTAuthentication
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("/test")]
+        public JsonResult GetResourceApi(TestModel user) {
+            string token = GenerateJwtToken(user);
+            return new JsonResult(new {token });
+        }
+        [HttpGet]
+        [Route("/auth")]
+        public JsonResult GetResource()
+        {
+            return new JsonResult(new { status = true, message = "only authenticated user can only see this" });
+        }
+
+        private string GenerateJwtToken(TestModel user)
+        {
+            var securityKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var claims = new[] {
+                new Claim(JwtRegisteredClaimNames.Sub,user.Name),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
+                                             _config["Jwt:Issuer"],
+                                             claims,
+                                             expires: DateTime.Now.AddMinutes(1),
+                                             signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        #endregion
     }
 }
