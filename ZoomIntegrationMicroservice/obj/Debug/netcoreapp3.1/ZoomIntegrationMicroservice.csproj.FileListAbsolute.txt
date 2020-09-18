@@ -9,6 +9,14 @@ C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.pdb
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
@@ -21,11 +29,12 @@ C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.csprojAssemblyReference.cache
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.AssemblyInfoInputs.cache
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.AssemblyInfo.cs
-C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.csproj.CoreCompileInputs.cache
-C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.RazorTargetAssemblyInfo.cache
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.csproj.CopyComplete
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\staticwebassets\ZoomIntegrationMicroservice.StaticWebAssets.Manifest.cache
@@ -33,3 +42,6 @@ C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.dll
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.pdb
 C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.genruntimeconfig.cache
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.csprojAssemblyReference.cache
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.csproj.CoreCompileInputs.cache
+C:\Users\TftBhopal\source\repos\ZoomIntegrationMicroservice\obj\Debug\netcoreapp3.1\ZoomIntegrationMicroservice.MvcApplicationPartsAssemblyInfo.cache

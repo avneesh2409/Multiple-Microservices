@@ -35,7 +35,10 @@ namespace UserMicroservice
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnectionString"));
             });
             services.AddScoped<IUser, UserRepository>();
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(option=> {
+                option.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+                option.JsonSerializerOptions.MaxDepth = 5;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

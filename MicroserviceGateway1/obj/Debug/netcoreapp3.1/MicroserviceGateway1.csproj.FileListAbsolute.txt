@@ -17,6 +17,7 @@ C:\Users\TftBhopal\source\repos\MicroserviceGateway1\bin\Debug\netcoreapp3.1\Mic
 C:\Users\TftBhopal\source\repos\MicroserviceGateway1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\TftBhopal\source\repos\MicroserviceGateway1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\TftBhopal\source\repos\MicroserviceGateway1\bin\Debug\netcoreapp3.1\Ocelot.dll
+C:\Users\TftBhopal\source\repos\MicroserviceGateway1\obj\Debug\netcoreapp3.1\MicroserviceGateway1.csprojAssemblyReference.cache
 C:\Users\TftBhopal\source\repos\MicroserviceGateway1\obj\Debug\netcoreapp3.1\MicroserviceGateway1.AssemblyInfoInputs.cache
 C:\Users\TftBhopal\source\repos\MicroserviceGateway1\obj\Debug\netcoreapp3.1\MicroserviceGateway1.AssemblyInfo.cs
 C:\Users\TftBhopal\source\repos\MicroserviceGateway1\obj\Debug\netcoreapp3.1\MicroserviceGateway1.csproj.CoreCompileInputs.cache

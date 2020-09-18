@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,14 +29,23 @@ namespace ZoomIntegrationMicroservice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpClient("zoom", c =>
+            services.AddCors(options =>
             {
-                c.BaseAddress = new Uri("https://api.zoom.us/v2");
-                c.DefaultRequestHeaders.Add("Authorization", $"Bearer {Configuration.GetSection("ZoomCredentials:ZOOM_JWT_TOKEN")}");
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => { 
+                        builder.AllowAnyOrigin();
+                        builder.WithMethods("POST","GET");
+                        builder.AllowAnyHeader();
+                    });
             });
-            services.AddSingleton<IZoomServices, ZoomServicesRepo>();
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnectionString"));
+            });
+            services.AddHttpClient();
+            services.AddScoped<IZoomServices, ZoomServicesRepo>();
+            services.AddScoped<IAccessToken, AccessTokenRepo>();
             services.AddControllers();
-            services.AddMvc().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +61,7 @@ namespace ZoomIntegrationMicroservice
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors("AllowSpecificOrigin");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
