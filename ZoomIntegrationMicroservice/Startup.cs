@@ -59,7 +59,9 @@ namespace ZoomIntegrationMicroservice
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnectionString"));
             });
+
             services.AddHttpClient();
+            services.AddScoped<IMailService, MailServiceRepo>();
             services.AddScoped<IZoomServices, ZoomServicesRepo>();
             services.AddScoped<IAccessToken, AccessTokenRepo>();
             services.AddControllers();
