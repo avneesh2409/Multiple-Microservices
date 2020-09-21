@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MailKit.Net.Smtp;
 using MailKit.Security;
+using Microsoft.Extensions.Configuration;
 using MimeKit;
 using ZoomIntegrationMicroservice.Models;
 
@@ -16,20 +17,26 @@ namespace ZoomIntegrationMicroservice.Services
 {
     public class MailServiceRepo:IMailService
     {
+        private readonly IConfiguration _config;
+
+        public MailServiceRepo(IConfiguration config)
+        {
+            _config = config;
+        }
         public bool SendEmail(EmailModel email) {
             try
             {
-                string fromAddress = "Your Email Address";
-                var fromPassword = "Your Password";
-                var toAddress =email.To;
-
+                string fromAddress = _config["MailService:From"];
+                var fromPassword = _config["MailService:To"];
                 var message = new MimeMessage();
 
-                MailboxAddress from = new MailboxAddress("Your Company Name",fromAddress);
+                MailboxAddress from = new MailboxAddress("Think Future Technology Pvt. Limited",fromAddress);
                 message.From.Add(from);
 
-                MailboxAddress to = new MailboxAddress("User Name", toAddress);
-                message.To.Add(to);  
+                foreach (string toAddress in email.To) {
+                    MailboxAddress to = new MailboxAddress("User Name", toAddress);
+                    message.To.Add(to);
+                }
 
                 string subject = email.Subject;
                 message.Subject = subject;
@@ -42,8 +49,9 @@ namespace ZoomIntegrationMicroservice.Services
                     bodyBuilder.TextBody = email.Text;
                 }
                 if (email.IsFile) {
-                    if (File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload", email.File))) {
-                        bodyBuilder.Attachments.Add(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload", email.File));
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload", email.File);
+                    if (File.Exists(filePath)) {
+                        bodyBuilder.Attachments.Add(filePath);
                     }
                 }
                 message.Body = bodyBuilder.ToMessageBody();

@@ -7,7 +7,7 @@ namespace ZoomIntegrationMicroservice.Models
 {
     public class EmailModel
     {
-        public string To
+        public List<string> To
         {
             get; set;
         }

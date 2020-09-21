@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ZoomIntegrationMicroservice.Models;
@@ -16,9 +14,12 @@ namespace ZoomIntegrationMicroservice.Controllers
     {
         private readonly IMailService _email;
 
-        public EmailServiceController(IMailService email)
+        public readonly IFileUpload _file;
+
+        public EmailServiceController(IMailService email,IFileUpload file)
         {
             _email = email;
+            _file = file;
         }
         [HttpPost]
         [Route("send-email")]
@@ -26,6 +27,14 @@ namespace ZoomIntegrationMicroservice.Controllers
             bool result = _email.SendEmail(email);
             return result;
         }
-
+        #region FileUploadFunction
+        [HttpPost]
+        [Route("file-upload")]
+        public async Task<JsonResult> FileUpload(List<IFormFile> files)
+        {
+            var result = await _file.UploadFile(files);
+            return result;
+        }
+        #endregion
     }
 }

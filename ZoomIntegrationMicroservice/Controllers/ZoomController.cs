@@ -213,35 +213,5 @@ namespace ZoomIntegrationMicroservice.Controllers
         }
 
         #endregion
-
-        #region FileUploadFunction
-        [HttpPost]
-        [AllowAnonymous]
-        [Route("file-upload")]
-        public async Task<JsonResult> FileUpload(List<IFormFile> files) {
-
-            if (files.Count > 0)
-            {
-                string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload");
-                Dictionary<string,string> filesPath = new Dictionary<string,string>();
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
-                foreach (IFormFile file in files)
-                {
-                    string filePath = Path.Combine(path,Guid.NewGuid().ToString() + '_' + file.FileName);
-                    filesPath.Add(file.FileName,"/upload/"+ Guid.NewGuid().ToString() + '_' + file.FileName);
-                    FileStream fs = System.IO.File.Create(filePath);
-                    await file.CopyToAsync(fs);
-                }
-                return new JsonResult(filesPath);
-            }
-            else
-            {
-                return new JsonResult(new { status = false, message = "unable to upload" });
-            }               
-        }
-        #endregion
     }
 }

@@ -61,6 +61,7 @@ namespace ZoomIntegrationMicroservice
             });
 
             services.AddHttpClient();
+            services.AddScoped<IFileUpload, FileUploadRepo>();
             services.AddScoped<IMailService, MailServiceRepo>();
             services.AddScoped<IZoomServices, ZoomServicesRepo>();
             services.AddScoped<IAccessToken, AccessTokenRepo>();
